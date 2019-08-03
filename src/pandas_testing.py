@@ -9,5 +9,5 @@ class TestPandas(unittest.TestCase):
 
     def test_read(self):
         geonames = pd_geo.Geonames()
-        data = geonames.read(self.geonames_file_path)
-        del data
+        geonames.read(self.geonames_file_path)
+        del geonames
