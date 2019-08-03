@@ -15,5 +15,6 @@ class TestPandas(unittest.TestCase):
     def test_query_lates(self):
         geonames = pd_geo.Geonames()
         geonames.read(self.geonames_file_path)
-        geonames.last_updates()
+        latest_updates = geonames.last_updates()
+        self.assertLess(0, len(latest_updates), "At least one record must be the latest update!")
         del geonames

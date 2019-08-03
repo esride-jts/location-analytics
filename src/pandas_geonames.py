@@ -23,4 +23,4 @@ class Geonames:
         assert(self._data is not None), "The geonames data must be read into memory before getting queried!"
 
         latest_update = self._data["modification_date"].max()
-        return
+        return self._data.loc[latest_update == self._data["modification_date"]]
