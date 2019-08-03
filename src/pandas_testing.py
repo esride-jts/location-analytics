@@ -11,3 +11,9 @@ class TestPandas(unittest.TestCase):
         geonames = pd_geo.Geonames()
         geonames.read(self.geonames_file_path)
         del geonames
+
+    def test_query_lates(self):
+        geonames = pd_geo.Geonames()
+        geonames.read(self.geonames_file_path)
+        geonames.last_updates()
+        del geonames
